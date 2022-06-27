@@ -15,6 +15,11 @@ pipeline {
                 failure { 
                     echo "Build Failed"
                 }
+
+                // if success ...
+                success { 
+                    echo "Build Success"
+                }
             }
 
         }
