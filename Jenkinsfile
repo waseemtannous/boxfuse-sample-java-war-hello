@@ -17,7 +17,7 @@ pipeline {
                     echo "Build Failed"
                 }
 
-                 abort { 
+                 aborted { 
                     echo "Build Aborted"
                 }
             }
