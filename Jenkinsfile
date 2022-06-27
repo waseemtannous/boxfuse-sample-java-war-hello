@@ -15,14 +15,13 @@ pipeline {
                 failure { 
                     echo "Build Failed"
                 }
-
-                // if success ...
-                success { 
-                    echo "Build Success"
-                }
             }
-
         }
 
+        stage('Run') {
+            steps { 
+                sh "boxfuse run target/hello-1.0.war"
+            }
+        }
     }
 }
