@@ -6,7 +6,7 @@ pipeline {
             steps { 
                 // limit to 1 minute
                 timeout(time:1, unit:'MINUTES') {
-                    sh "sleep 60"
+                    // sh "sleep 60"
                     sh "mvn package" 
                 }
             }
@@ -15,6 +15,10 @@ pipeline {
                 // if failed ...
                 failure { 
                     echo "Build Failed"
+                }
+
+                 abort { 
+                    echo "Build Aborted"
                 }
             }
         }
